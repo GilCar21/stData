@@ -1,5 +1,5 @@
 import Image from "next/image";
-import login from "./_actions/login";
+import { login, loginGithub } from "./_actions/login";
 
 export default function Login() {
   return (
@@ -14,9 +14,14 @@ export default function Login() {
             </h1>
             <p className="text-sm ">See what is going on with your business</p>
           </div>
-          <button className="w-full flex items-center justify-center py-2 border-[1px] border-[#C4C4CC40] mb-4 rounded-md">
-            Github
-          </button>
+          <form action={loginGithub} className="w-full">
+            <button
+              type="submit"
+              className="w-full flex items-center justify-center py-2 border-[1px] border-[#C4C4CC40] mb-4 rounded-md"
+            >
+              Github
+            </button>
+          </form>
 
           <p className="text-sm mb-4">
             -------- or Sign in with Email --------
